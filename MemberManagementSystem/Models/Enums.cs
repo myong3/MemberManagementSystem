@@ -24,6 +24,13 @@ namespace MemberManagementSystem.Models
             /// </summary>
             [Description("DBHQSavings")]
             DBHQSavings,
+
+
+            /// <summary>
+            /// localdb
+            /// </summary>
+            [Description("localdb")]
+            localdb,
         }
     }
 }

@@ -25,5 +25,20 @@ namespace MemberManagementSystem.Models.ProviderModels
         /// </summary>
         public string userPassword { get; set; }
 
+        /// <summary>
+        /// userPasswordSalt
+        /// </summary>
+        public string userPasswordSalt { get; set; }
+
+        /// <summary>
+        /// CreateTime
+        /// </summary>
+        public DateTime CreateTime { get; set; }
+
+        /// <summary>
+        /// UpdateTime
+        /// </summary>
+        public DateTime UpdateTime { get; set; }
+
     }
 }
