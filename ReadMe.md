@@ -23,6 +23,9 @@ https://www.mdeditor.tw/pl/pIvr/zh-tw
 8. 如何進行Database First式開發？
 https://ithelp.ithome.com.tw/articles/10201333
 
+9. ASP.NET Core 2 系列 - 跨域請求 (Cross-Origin Requests)
+https://ithelp.ithome.com.tw/articles/10196870
+
 安裝Nuget:
 1. Dapper v2.0.78
 2. Microsoft.EntityFrameworkCore v5.0.2
@@ -30,3 +33,4 @@ https://ithelp.ithome.com.tw/articles/10201333
 4. System.Data.SqlClient v4.8.2
 5. Dapper.Contrib v2.0.78
 6. Microsoft.EntityFrameworkCore.Tools v5.0.2
+7. Microsoft.AspNetCore.Cors v2.2.0
