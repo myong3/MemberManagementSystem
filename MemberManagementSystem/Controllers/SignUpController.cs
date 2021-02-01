@@ -35,7 +35,6 @@ namespace MemberManagementSystem.Controllers
         /// POST api/signup/CheckAccount
         /// 確認帳號是否重覆註冊
         /// </summary>
-        /// <param name="account"></param>
         /// <returns> true:已註冊 ; false:未註冊 </returns>
         [HttpPost]
         [Route("CheckAccount")]
@@ -65,8 +64,7 @@ namespace MemberManagementSystem.Controllers
         /// POST api/signup/signup
         /// 將帳號密碼註冊至資料庫
         /// </summary>
-        /// <param name="account"></param>
-        /// <returns> true:已註冊 ; false:未註冊 </returns>
+        /// <returns>key value</returns>
         [HttpPost]
         [Route("SignUp")]
 

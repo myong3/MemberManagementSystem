@@ -19,4 +19,11 @@
     <PackageReference Include="System.Data.SqlClient" Version="4.8.2" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Areas\SMS\Controllers\" />
+    <Folder Include="Areas\SMS\Data\" />
+    <Folder Include="Areas\SMS\Models\" />
+    <Folder Include="Areas\SMS\Views\" />
+  </ItemGroup>
+
 </Project>
