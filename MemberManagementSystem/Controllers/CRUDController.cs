@@ -11,42 +11,82 @@ using Microsoft.AspNetCore.Mvc;
 using static MemberManagementSystem.Models.Enums;
 using static MemberManagementSystem.Extensions.CommonExtension;
 using MemberManagementSystem.DataContext;
+using Microsoft.AspNetCore.Authorization;
+using System.Net;
+using MemberManagementSystem.Models.CRUDModels;
+using MemberManagementSystem.Helper;
+using Microsoft.AspNetCore.Http;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
 namespace MemberManagementSystem.Controllers
 {
     [Route("api/[controller]")]
+    [Authorize(Roles = "Admin")]
     [ApiController]
-    public class CRUDController : ControllerBase
+    public class CRUDController : Controller
     {
         private readonly IDapper _dapper;
 
-        public CRUDController(IDapper dapper)
+        private readonly JwtHelpers _jwt;
+
+
+        public CRUDController(IDapper dapper, JwtHelpers jwt)
         {
             // DI
             _dapper = dapper;
+
+            _jwt = jwt;
+
         }
 
 
-        // GET: api/<CRUDController>
+        // GET: api/crud
         [HttpGet]
-        public IEnumerable<string> Get()
+        [ProducesResponseType((int)HttpStatusCode.OK)]
+        [ProducesResponseType((int)HttpStatusCode.NoContent)]
+        [ProducesResponseType((int)HttpStatusCode.BadRequest)]
+        public async Task<IActionResult> Get()
         {
-            return new string[] { "value1", "value2" };
-        }
+            try
+            {
+                var validateResult = validateTokenExp(Request);
 
-        // GET api/<CRUDController>/5
-        [HttpGet("{id}")]
-        public string Get(int id)
-        {
-            return "value";
-        }
+                var querySql = $"Select * from [Userr]";
+                var queryResult = await _dapper.QueryAsync<UserModel>(ConnectionString.localdb.GetDescriptionText(), querySql).ConfigureAwait(false);
 
-        // POST api/<CRUDController>
-        [HttpPost]
-        public void Post([FromBody] string value)
-        {
+                if (queryResult != null)
+                {
+                    var result = new List<UserResponseViewModel>();
+
+                    foreach (var item in queryResult)
+                    {
+                        var data = new UserResponseViewModel()
+                        {
+                            userId = item.userId,
+                            userAccount = item.userAccount,
+                            userPassword = item.userPassword,
+                            userPasswordSalt = item.userPasswordSalt,
+                            userPolicy = item.userPolicy,
+                            CreateTime = item.CreateTime,
+                            UpdateTime = item.UpdateTime,
+                            RefreshToken = validateResult
+                        };
+
+                        result.Add(data);
+                    }
+
+                    return Ok(result);
+                }
+                else
+                {
+                    return NoContent();
+                }
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
         }
 
         // PUT api/<CRUDController>/5
@@ -67,7 +107,7 @@ namespace MemberManagementSystem.Controllers
         /// <param name="msg">訊息</param>
         [HttpPost]
         [Route("LogIn")]
-        public async Task<object> LogIn ([FromBody] UserViewModel model)
+        public async Task<object> LogIn([FromBody] UserViewModel model)
         {
             try
             {
@@ -88,7 +128,7 @@ namespace MemberManagementSystem.Controllers
                 };
 
                 var list = new List<UserModel>();
-                list.Add(insertModel); 
+                list.Add(insertModel);
                 list.Add(insertModel);
                 list.Add(insertModel);
                 list.Add(insertModel);
@@ -110,6 +150,14 @@ namespace MemberManagementSystem.Controllers
 
                 throw ex;
             }
+        }
+
+        private string validateTokenExp(HttpRequest request)
+        {
+            var headers = request.Headers;
+            var authorization = headers["Authorization"].ToString();
+            var token = authorization.Replace("Bearer ", "");
+            return _jwt.ValidateTokenExp(token);
         }
     }
 }

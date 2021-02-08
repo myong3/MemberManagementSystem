@@ -1,12 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "5ylMDMVSqYNhu/FEodwJRrciya92M6NdW+uLFpcgCr7BSfrxv3asq7EQDPiPHNomh30jSH3Kfh9E2Q5rCXoXHQ==",
+  "dgSpecHash": "nOR9erhu7VNKmC+Q2qBgMilgtRQvsQf/8wCTTvzruhzewlhGQgbevCKomEraouWuimRgIeje9+dzwDfZytw6FQ==",
   "success": true,
   "projectFilePath": "C:\\Study\\myCSharpProject\\MemberManagementSystem\\MemberManagementSystem\\MemberManagementSystem.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\myong\\.nuget\\packages\\dapper\\2.0.78\\dapper.2.0.78.nupkg.sha512",
     "C:\\Users\\myong\\.nuget\\packages\\dapper.contrib\\2.0.78\\dapper.contrib.2.0.78.nupkg.sha512",
     "C:\\Users\\myong\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
+    "C:\\Users\\myong\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\3.1.10\\microsoft.aspnetcore.authentication.jwtbearer.3.1.10.nupkg.sha512",
     "C:\\Users\\myong\\.nuget\\packages\\microsoft.aspnetcore.cors\\2.2.0\\microsoft.aspnetcore.cors.2.2.0.nupkg.sha512",
     "C:\\Users\\myong\\.nuget\\packages\\microsoft.aspnetcore.html.abstractions\\2.2.0\\microsoft.aspnetcore.html.abstractions.2.2.0.nupkg.sha512",
     "C:\\Users\\myong\\.nuget\\packages\\microsoft.aspnetcore.http.abstractions\\2.2.0\\microsoft.aspnetcore.http.abstractions.2.2.0.nupkg.sha512",

@@ -1,18 +1,12 @@
-﻿using Dapper.Contrib.Extensions;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace MemberManagementSystem.Models.ProviderModels
+namespace MemberManagementSystem.Models.CRUDModels
 {
-    [Table("Userr")]
-    public class UserModel
+    public class UserResponseViewModel
     {
-        /// <summary>
-        /// userId
-        /// </summary>
-        [Key]
         public int userId { get; set; }
 
         /// <summary>
@@ -45,5 +39,9 @@ namespace MemberManagementSystem.Models.ProviderModels
         /// </summary>
         public DateTime UpdateTime { get; set; }
 
+        /// <summary>
+        /// RefreshToken
+        /// </summary>
+        public string RefreshToken { get; set; }
     }
 }

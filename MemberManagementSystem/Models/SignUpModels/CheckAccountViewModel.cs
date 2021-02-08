@@ -7,7 +7,9 @@ namespace MemberManagementSystem.Models.SignUpModels
 {
     public class CheckAccountViewModel
     {
+        /// <summary>
+        /// userAccount
+        /// </summary>
         public string userAccount { get; set; }
-
     }
 }
