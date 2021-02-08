@@ -8,6 +8,7 @@ using System.IdentityModel.Tokens.Jwt;
 using Newtonsoft.Json;
 using System.Security.Cryptography;
 using System.Linq;
+using MemberManagementSystem.Models.CRUDModels;
 
 namespace MemberManagementSystem.Helper
 {
@@ -19,7 +20,7 @@ namespace MemberManagementSystem.Helper
         {
             this.Configuration = configuration;
         }
-        public string GenerateToken(string userName,bool IsAdmin = false, int expireMinutes = 30)
+        public string GenerateToken(string userName, bool IsAdmin = false, int expireMinutes = 30)
         {
             var issuer = Configuration.GetValue<string>("JwtSettings:Issuer");
             var signKey = Configuration.GetValue<string>("JwtSettings:SignKey");
@@ -87,19 +88,19 @@ namespace MemberManagementSystem.Helper
             var jsonToken = handler.ReadToken(token);
             var tokenS = handler.ReadToken(token) as JwtSecurityToken;
             var exp = tokenS.Claims.First(claim => claim.Type == "exp").Value;
+            var roles = tokenS.Claims.First(claim => claim.Type == "roles").Value;
             var TimestampNow = new DateTimeOffset(DateTime.UtcNow).ToUnixTimeSeconds();
 
             if (long.Parse(exp) - TimestampNow < 300)
             {
                 var sub = tokenS.Claims.First(claim => claim.Type == "sub").Value;
-                var roles = tokenS.Claims.First(claim => claim.Type == "roles").Value;
 
                 var RefreshToken = string.Empty;
                 if (roles == "Admin")
                 {
                     RefreshToken = GenerateToken(sub, true);
                 }
-                else if(roles == "User")
+                else if (roles == "User")
                 {
                     RefreshToken = GenerateToken(sub);
                 }
@@ -107,6 +108,32 @@ namespace MemberManagementSystem.Helper
                 return RefreshToken;
             }
             return string.Empty;
+        }
+
+        public string ValidateTokenExpAndPolicy(string token, bool nowPolicy)
+        {
+            var handler = new JwtSecurityTokenHandler();
+            var jsonToken = handler.ReadToken(token);
+            var tokenS = handler.ReadToken(token) as JwtSecurityToken;
+            var exp = tokenS.Claims.First(claim => claim.Type == "exp").Value;
+            var roles = tokenS.Claims.First(claim => claim.Type == "roles").Value;
+            var sub = tokenS.Claims.First(claim => claim.Type == "sub").Value;
+
+            var TimestampNow = new DateTimeOffset(DateTime.UtcNow).ToUnixTimeSeconds();
+            var RefreshToken = string.Empty;
+
+            if (roles == "Admin")
+            {
+                if (!nowPolicy)
+                {
+                    RefreshToken = GenerateToken(sub);
+                }
+                else if (long.Parse(exp) - TimestampNow < 300)
+                {
+                    RefreshToken = GenerateToken(sub, true);
+                }
+            }
+            return RefreshToken;
         }
 
     }
