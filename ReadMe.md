@@ -35,3 +35,4 @@ https://ithelp.ithome.com.tw/articles/10196870
 6. Microsoft.EntityFrameworkCore.Tools v5.0.2
 7. Microsoft.Extensions.Configuration.Binder v5.0.0
 8. Microsoft.AspNetCore.Cors v2.2.0
+9. Microsoft.AspNetCore.Authentication.JwtBearer v3.1.10
