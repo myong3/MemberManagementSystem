@@ -33,5 +33,5 @@ https://ithelp.ithome.com.tw/articles/10196870
 4. System.Data.SqlClient v4.8.2
 5. Dapper.Contrib v2.0.78
 6. Microsoft.EntityFrameworkCore.Tools v5.0.2
-7. Microsoft.Extensions.Configuration.Binder
+7. Microsoft.Extensions.Configuration.Binder v5.0.0
 8. Microsoft.AspNetCore.Cors v2.2.0
