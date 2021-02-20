@@ -1,0 +1,9 @@
+C:\Study\myCSharpProject\MemberManagementSystem\MemberManagementSystem.Platform\obj\Debug\netcoreapp3.1\MemberManagementSystem.Platform.csprojAssemblyReference.cache
+C:\Study\myCSharpProject\MemberManagementSystem\MemberManagementSystem.Platform\obj\Debug\netcoreapp3.1\MemberManagementSystem.Platform.AssemblyInfoInputs.cache
+C:\Study\myCSharpProject\MemberManagementSystem\MemberManagementSystem.Platform\obj\Debug\netcoreapp3.1\MemberManagementSystem.Platform.AssemblyInfo.cs
+C:\Study\myCSharpProject\MemberManagementSystem\MemberManagementSystem.Platform\obj\Debug\netcoreapp3.1\MemberManagementSystem.Platform.csproj.CoreCompileInputs.cache
+C:\Study\myCSharpProject\MemberManagementSystem\MemberManagementSystem.Platform\bin\Debug\netcoreapp3.1\MemberManagementSystem.Platform.deps.json
+C:\Study\myCSharpProject\MemberManagementSystem\MemberManagementSystem.Platform\bin\Debug\netcoreapp3.1\MemberManagementSystem.Platform.dll
+C:\Study\myCSharpProject\MemberManagementSystem\MemberManagementSystem.Platform\bin\Debug\netcoreapp3.1\MemberManagementSystem.Platform.pdb
+C:\Study\myCSharpProject\MemberManagementSystem\MemberManagementSystem.Platform\obj\Debug\netcoreapp3.1\MemberManagementSystem.Platform.dll
+C:\Study\myCSharpProject\MemberManagementSystem\MemberManagementSystem.Platform\obj\Debug\netcoreapp3.1\MemberManagementSystem.Platform.pdb

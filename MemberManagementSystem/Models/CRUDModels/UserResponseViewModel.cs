@@ -5,7 +5,21 @@ using System.Threading.Tasks;
 
 namespace MemberManagementSystem.Models.CRUDModels
 {
+
     public class UserResponseViewModel
+    {
+        /// <summary>
+        /// User
+        /// </summary>
+        public List<UserResponseModel> UserList { get; set; }
+
+        /// <summary>
+        /// RefreshToken
+        /// </summary>
+        public string RefreshToken { get; set; }
+    }
+
+    public class UserResponseModel
     {
         public int userId { get; set; }
 
@@ -38,10 +52,5 @@ namespace MemberManagementSystem.Models.CRUDModels
         /// UpdateTime
         /// </summary>
         public DateTime UpdateTime { get; set; }
-
-        /// <summary>
-        /// RefreshToken
-        /// </summary>
-        public string RefreshToken { get; set; }
     }
 }

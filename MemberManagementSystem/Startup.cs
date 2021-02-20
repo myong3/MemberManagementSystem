@@ -13,10 +13,16 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Mvc;
 using MemberManagementSystem.Models;
-using MemberManagementSystem.Helper;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
+using MemberManagementSystem.Service.SignUp;
+using MemberManagementSystem.Service.DataAccessLayer.SignUp;
+using MemberManagementSystem.Platform.Utilities;
+using MemberManagementSystem.Service.LogIn;
+using MemberManagementSystem.Service.DataAccessLayer.Common;
+using MemberManagementSystem.Service.JWToken;
+using MemberManagementSystem.Service.CRUD;
 
 namespace MemberManagementSystem
 {
@@ -37,10 +43,25 @@ namespace MemberManagementSystem
             services.AddDbContext<DataContext.AppContext>(options =>
                           options.UseSqlServer(
                               Configuration.GetConnectionString("dbSystex")));
-            //Register dapper in scope    
+
+            #region Register IOC
             services.AddScoped<IDapper, Dapperr>();
 
+            services.AddScoped<ISignUpService, SignUpService>();
+
+            services.AddScoped<ILogInService, LogInService>();
+
+            services.AddScoped<IJWTokenService, JWTokenService>();
+
+            services.AddScoped<ICRUDService, CRUDService>();
+
+            services.AddScoped<IUserAccountProvider, UserAccountProvider>();
+
+            services.AddScoped<ISignUpProvider, SignUpProvider>();
+
             services.AddSingleton<JwtHelpers>();
+
+            #endregion
 
             services
                 .AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
@@ -86,8 +107,6 @@ namespace MemberManagementSystem
                           .AllowCredentials();
                 });
             });
-
-
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

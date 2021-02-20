@@ -2,6 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
+    <UserSecretsId>056d707d-137b-4876-ba0d-5ac8c5da151b</UserSecretsId>
   </PropertyGroup>
 
   <ItemGroup>
@@ -18,6 +19,13 @@
     </PackageReference>
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.4" />
     <PackageReference Include="System.Data.SqlClient" Version="4.8.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\MemberManagementSystem.Model.Service\MemberManagementSystem.Model.Service.csproj" />
+    <ProjectReference Include="..\MemberManagementSystem.Platform\MemberManagementSystem.Platform.csproj" />
+    <ProjectReference Include="..\MemberManagementSystem.Service.DataAccessLayer\MemberManagementSystem.Service.DataAccessLayer.csproj" />
+    <ProjectReference Include="..\MemberManagementSystem.Service\MemberManagementSystem.Service.csproj" />
   </ItemGroup>
 
 </Project>

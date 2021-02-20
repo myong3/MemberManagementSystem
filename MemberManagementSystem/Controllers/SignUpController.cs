@@ -5,13 +5,11 @@ using System.Net;
 using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
-using MemberManagementSystem.Extensions;
-using MemberManagementSystem.Models.ProviderModels;
+using MemberManagementSystem.Model.Service.SignUp;
 using MemberManagementSystem.Models.SignUpModels;
-using MemberManagementSystem.Services.Interface;
+using MemberManagementSystem.Service.SignUp;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using static MemberManagementSystem.Models.Enums;
 
 namespace MemberManagementSystem.Controllers
 {
@@ -19,12 +17,12 @@ namespace MemberManagementSystem.Controllers
     [ApiController]
     public class SignUpController : Controller
     {
-        private readonly IDapper _dapper;
+        private readonly ISignUpService _signUpService;
 
-        public SignUpController(IDapper dapper)
+        public SignUpController(ISignUpService signUpService)
         {
             // DI
-            _dapper = dapper;
+            _signUpService = signUpService;
         }
 
         // GET: api/signup
@@ -51,15 +49,27 @@ namespace MemberManagementSystem.Controllers
             {
                 if (model.userAccount != null)
                 {
-                    var querySql = $"Select * from [Userr] where userAccount = '{model.userAccount}'";
-                    var queryResult = await _dapper.QueryFirstOrDefaultAsync<UserModel>(ConnectionString.localdb.GetDescriptionText(), querySql).ConfigureAwait(false);
-
-                    if (queryResult == null)
+                    var serviceData = new CheckAccountServiceModel()
                     {
-                        return NoContent();
-                    }
-                    return Json(queryResult);
+                        userAccount = model.userAccount
+                    };
+                    var serviceResult = await _signUpService.CheckAccount(serviceData).ConfigureAwait(false);
 
+                    if (serviceResult.IsOk)
+                    {
+                        if (serviceResult.Data)
+                        {
+                            return Json(serviceResult);
+                        }
+                        else
+                        {
+                            return NoContent();
+                        }
+                    }
+                    else
+                    {
+                        return BadRequest(new { message = serviceResult.Message, model });
+                    }
                 }
                 else
                 {
@@ -88,49 +98,26 @@ namespace MemberManagementSystem.Controllers
         {
             try
             {
-                var salt = string.Empty;
-                var insertEntity = new UserModel()
+                var data = new SignUpServiceModel()
                 {
                     userAccount = model.userAccount,
-                    userPassword = GetHashPassword(model.userPassword, ref salt),
-                    userPasswordSalt = salt,
-                    userPolicy = false,
-                    CreateTime = DateTime.Now,
-                    UpdateTime = DateTime.Now,
-
+                    userPassword = model.userPassword
                 };
-                var result = await _dapper.InsertAsync(ConnectionString.localdb.GetDescriptionText(), insertEntity).ConfigureAwait(false);
 
-                return Json(result);
+                var serviceResult = await _signUpService.SignUp(data).ConfigureAwait(false);
+
+                if (serviceResult.IsOk)
+                {
+                    return Json(serviceResult);
+                }
+                else
+                {
+                    return BadRequest(new { message = serviceResult.Message, model });
+                }
             }
             catch (Exception ex)
             {
                 return BadRequest(ex.Message);
-            }
-        }
-
-        private string GetHashPassword(string data, ref string salt)
-        {
-            #region 取得密碼加密salt
-            var possible =
-              "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890,./;'[]=-|}{)(*&^%$#@!?~`";
-            var lengthOfCode = 8;
-            salt = string.Empty;
-            Random random = new Random();//亂數種子
-            for (var i = 0; i < lengthOfCode; i++)
-            {
-                var randomNum = random.Next(0, possible.Length);
-                salt += possible[randomNum];
-            }
-            #endregion
-
-            using (var md5 = MD5.Create())
-            {
-                var hashResult = md5.ComputeHash(Encoding.ASCII.GetBytes(salt + data));
-                var strResult = BitConverter.ToString(hashResult);
-                var md5Result = strResult.Replace("-", "").ToLower();
-
-                return md5Result;
             }
         }
     }

@@ -1,6 +1,5 @@
 C:\Study\myCSharpProject\MemberManagementSystem\MemberManagementSystem\bin\Debug\netcoreapp3.1\appsettings.Development.json
 C:\Study\myCSharpProject\MemberManagementSystem\MemberManagementSystem\bin\Debug\netcoreapp3.1\appsettings.json
-C:\Study\myCSharpProject\MemberManagementSystem\MemberManagementSystem\bin\Debug\netcoreapp3.1\Properties\launchSettings.json
 C:\Study\myCSharpProject\MemberManagementSystem\MemberManagementSystem\bin\Debug\netcoreapp3.1\MemberManagementSystem.exe
 C:\Study\myCSharpProject\MemberManagementSystem\MemberManagementSystem\obj\Debug\netcoreapp3.1\MemberManagementSystem.csprojAssemblyReference.cache
 C:\Study\myCSharpProject\MemberManagementSystem\MemberManagementSystem\obj\Debug\netcoreapp3.1\MemberManagementSystem.AssemblyInfoInputs.cache
@@ -179,3 +178,16 @@ C:\Study\myCSharpProject\MemberManagementSystem\MemberManagementSystem\bin\Debug
 C:\Study\myCSharpProject\MemberManagementSystem\MemberManagementSystem\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Authentication.JwtBearer.dll
 C:\Study\myCSharpProject\MemberManagementSystem\MemberManagementSystem\obj\Debug\netcoreapp3.1\MemberManagementSystem.csproj.CoreCompileInputs.cache
 C:\Study\myCSharpProject\MemberManagementSystem\MemberManagementSystem\obj\Debug\netcoreapp3.1\MemberManagementSystem.MvcApplicationPartsAssemblyInfo.cache
+C:\Study\myCSharpProject\MemberManagementSystem\MemberManagementSystem\obj\Debug\netcoreapp3.1\scopedcss\bundle\MemberManagementSystem.styles.css
+C:\Study\myCSharpProject\MemberManagementSystem\MemberManagementSystem\bin\Debug\netcoreapp3.1\web.config
+C:\Study\myCSharpProject\MemberManagementSystem\MemberManagementSystem\bin\Debug\netcoreapp3.1\MemberManagementSystem.Model.DataAccessLayer.dll
+C:\Study\myCSharpProject\MemberManagementSystem\MemberManagementSystem\bin\Debug\netcoreapp3.1\MemberManagementSystem.Model.Service.dll
+C:\Study\myCSharpProject\MemberManagementSystem\MemberManagementSystem\bin\Debug\netcoreapp3.1\MemberManagementSystem.Platform.dll
+C:\Study\myCSharpProject\MemberManagementSystem\MemberManagementSystem\bin\Debug\netcoreapp3.1\MemberManagementSystem.Service.dll
+C:\Study\myCSharpProject\MemberManagementSystem\MemberManagementSystem\bin\Debug\netcoreapp3.1\MemberManagementSystem.Model.Service.pdb
+C:\Study\myCSharpProject\MemberManagementSystem\MemberManagementSystem\bin\Debug\netcoreapp3.1\MemberManagementSystem.Platform.pdb
+C:\Study\myCSharpProject\MemberManagementSystem\MemberManagementSystem\bin\Debug\netcoreapp3.1\MemberManagementSystem.Service.pdb
+C:\Study\myCSharpProject\MemberManagementSystem\MemberManagementSystem\bin\Debug\netcoreapp3.1\MemberManagementSystem.Model.DataAccessLayer.pdb
+C:\Study\myCSharpProject\MemberManagementSystem\MemberManagementSystem\bin\Debug\netcoreapp3.1\MemberManagementSystem.Service.DataAccessLayer.dll
+C:\Study\myCSharpProject\MemberManagementSystem\MemberManagementSystem\bin\Debug\netcoreapp3.1\MemberManagementSystem.Service.DataAccessLayer.pdb
+C:\Study\myCSharpProject\MemberManagementSystem\MemberManagementSystem\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.Binder.dll

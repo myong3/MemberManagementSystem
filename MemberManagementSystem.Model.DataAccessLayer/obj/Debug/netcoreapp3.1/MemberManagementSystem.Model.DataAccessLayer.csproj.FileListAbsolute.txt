@@ -1,0 +1,9 @@
+C:\Study\myCSharpProject\MemberManagementSystem\MemberManagementSystem.Model.DataAccessLayer\obj\Debug\netcoreapp3.1\MemberManagementSystem.Model.DataAccessLayer.csprojAssemblyReference.cache
+C:\Study\myCSharpProject\MemberManagementSystem\MemberManagementSystem.Model.DataAccessLayer\obj\Debug\netcoreapp3.1\MemberManagementSystem.Model.DataAccessLayer.AssemblyInfoInputs.cache
+C:\Study\myCSharpProject\MemberManagementSystem\MemberManagementSystem.Model.DataAccessLayer\obj\Debug\netcoreapp3.1\MemberManagementSystem.Model.DataAccessLayer.AssemblyInfo.cs
+C:\Study\myCSharpProject\MemberManagementSystem\MemberManagementSystem.Model.DataAccessLayer\obj\Debug\netcoreapp3.1\MemberManagementSystem.Model.DataAccessLayer.csproj.CoreCompileInputs.cache
+C:\Study\myCSharpProject\MemberManagementSystem\MemberManagementSystem.Model.DataAccessLayer\bin\Debug\netcoreapp3.1\MemberManagementSystem.Model.DataAccessLayer.deps.json
+C:\Study\myCSharpProject\MemberManagementSystem\MemberManagementSystem.Model.DataAccessLayer\bin\Debug\netcoreapp3.1\MemberManagementSystem.Model.DataAccessLayer.dll
+C:\Study\myCSharpProject\MemberManagementSystem\MemberManagementSystem.Model.DataAccessLayer\bin\Debug\netcoreapp3.1\MemberManagementSystem.Model.DataAccessLayer.pdb
+C:\Study\myCSharpProject\MemberManagementSystem\MemberManagementSystem.Model.DataAccessLayer\obj\Debug\netcoreapp3.1\MemberManagementSystem.Model.DataAccessLayer.dll
+C:\Study\myCSharpProject\MemberManagementSystem\MemberManagementSystem.Model.DataAccessLayer\obj\Debug\netcoreapp3.1\MemberManagementSystem.Model.DataAccessLayer.pdb

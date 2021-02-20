@@ -653,6 +653,18 @@
           "lib/netstandard2.0/Microsoft.Extensions.Configuration.Abstractions.dll": {}
         }
       },
+      "Microsoft.Extensions.Configuration.Binder/5.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Extensions.Configuration.Abstractions": "5.0.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/Microsoft.Extensions.Configuration.Binder.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.Extensions.Configuration.Binder.dll": {}
+        }
+      },
       "Microsoft.Extensions.DependencyInjection/5.0.1": {
         "type": "package",
         "dependencies": {
@@ -2938,6 +2950,84 @@
         "runtime": {
           "lib/netstandard1.3/System.Xml.XmlSerializer.dll": {}
         }
+      },
+      "MemberManagementSystem.Model.DataAccessLayer/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.1",
+        "dependencies": {
+          "Dapper": "2.0.78",
+          "Dapper.Contrib": "2.0.78"
+        },
+        "compile": {
+          "bin/placeholder/MemberManagementSystem.Model.DataAccessLayer.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/MemberManagementSystem.Model.DataAccessLayer.dll": {}
+        }
+      },
+      "MemberManagementSystem.Model.Service/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.1",
+        "compile": {
+          "bin/placeholder/MemberManagementSystem.Model.Service.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/MemberManagementSystem.Model.Service.dll": {}
+        }
+      },
+      "MemberManagementSystem.Platform/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.1",
+        "dependencies": {
+          "Dapper": "2.0.78",
+          "Dapper.Contrib": "2.0.78",
+          "Microsoft.EntityFrameworkCore.SqlServer": "5.0.2",
+          "Microsoft.Extensions.Configuration.Binder": "5.0.0",
+          "System.Data.SqlClient": "4.8.2"
+        },
+        "compile": {
+          "bin/placeholder/MemberManagementSystem.Platform.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/MemberManagementSystem.Platform.dll": {}
+        }
+      },
+      "MemberManagementSystem.Service/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.1",
+        "dependencies": {
+          "MemberManagementSystem.Model.DataAccessLayer": "1.0.0",
+          "MemberManagementSystem.Model.Service": "1.0.0",
+          "MemberManagementSystem.Platform": "1.0.0",
+          "MemberManagementSystem.Service.DataAccessLayer": "1.0.0",
+          "Microsoft.AspNetCore.Authentication.JwtBearer": "3.1.10"
+        },
+        "compile": {
+          "bin/placeholder/MemberManagementSystem.Service.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/MemberManagementSystem.Service.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ]
+      },
+      "MemberManagementSystem.Service.DataAccessLayer/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.1",
+        "dependencies": {
+          "Dapper": "2.0.78",
+          "MemberManagementSystem.Model.DataAccessLayer": "1.0.0",
+          "MemberManagementSystem.Model.Service": "1.0.0",
+          "MemberManagementSystem.Platform": "1.0.0",
+          "System.Data.SqlClient": "4.8.2"
+        },
+        "compile": {
+          "bin/placeholder/MemberManagementSystem.Service.DataAccessLayer.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/MemberManagementSystem.Service.DataAccessLayer.dll": {}
+        }
       }
     }
   },
@@ -3684,6 +3774,26 @@
         "lib/netstandard2.0/Microsoft.Extensions.Configuration.Abstractions.xml",
         "microsoft.extensions.configuration.abstractions.5.0.0.nupkg.sha512",
         "microsoft.extensions.configuration.abstractions.nuspec",
+        "useSharedDesignerContext.txt",
+        "version.txt"
+      ]
+    },
+    "Microsoft.Extensions.Configuration.Binder/5.0.0": {
+      "sha512": "Of1Irt1+NzWO+yEYkuDh5TpT4On7LKl98Q9iLqCdOZps6XXEWDj3AKtmyvzJPVXZe4apmkJJIiDL7rR1yC+hjQ==",
+      "type": "package",
+      "path": "microsoft.extensions.configuration.binder/5.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/net461/Microsoft.Extensions.Configuration.Binder.dll",
+        "lib/net461/Microsoft.Extensions.Configuration.Binder.xml",
+        "lib/netstandard2.0/Microsoft.Extensions.Configuration.Binder.dll",
+        "lib/netstandard2.0/Microsoft.Extensions.Configuration.Binder.xml",
+        "microsoft.extensions.configuration.binder.5.0.0.nupkg.sha512",
+        "microsoft.extensions.configuration.binder.nuspec",
         "useSharedDesignerContext.txt",
         "version.txt"
       ]
@@ -9417,12 +9527,41 @@
         "system.xml.xmlserializer.4.3.0.nupkg.sha512",
         "system.xml.xmlserializer.nuspec"
       ]
+    },
+    "MemberManagementSystem.Model.DataAccessLayer/1.0.0": {
+      "type": "project",
+      "path": "../MemberManagementSystem.Model.DataAccessLayer/MemberManagementSystem.Model.DataAccessLayer.csproj",
+      "msbuildProject": "../MemberManagementSystem.Model.DataAccessLayer/MemberManagementSystem.Model.DataAccessLayer.csproj"
+    },
+    "MemberManagementSystem.Model.Service/1.0.0": {
+      "type": "project",
+      "path": "../MemberManagementSystem.Model.Service/MemberManagementSystem.Model.Service.csproj",
+      "msbuildProject": "../MemberManagementSystem.Model.Service/MemberManagementSystem.Model.Service.csproj"
+    },
+    "MemberManagementSystem.Platform/1.0.0": {
+      "type": "project",
+      "path": "../MemberManagementSystem.Platform/MemberManagementSystem.Platform.csproj",
+      "msbuildProject": "../MemberManagementSystem.Platform/MemberManagementSystem.Platform.csproj"
+    },
+    "MemberManagementSystem.Service/1.0.0": {
+      "type": "project",
+      "path": "../MemberManagementSystem.Service/MemberManagementSystem.Service.csproj",
+      "msbuildProject": "../MemberManagementSystem.Service/MemberManagementSystem.Service.csproj"
+    },
+    "MemberManagementSystem.Service.DataAccessLayer/1.0.0": {
+      "type": "project",
+      "path": "../MemberManagementSystem.Service.DataAccessLayer/MemberManagementSystem.Service.DataAccessLayer.csproj",
+      "msbuildProject": "../MemberManagementSystem.Service.DataAccessLayer/MemberManagementSystem.Service.DataAccessLayer.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.1": [
       "Dapper >= 2.0.78",
       "Dapper.Contrib >= 2.0.78",
+      "MemberManagementSystem.Model.Service >= 1.0.0",
+      "MemberManagementSystem.Platform >= 1.0.0",
+      "MemberManagementSystem.Service >= 1.0.0",
+      "MemberManagementSystem.Service.DataAccessLayer >= 1.0.0",
       "Microsoft.AspNetCore.Authentication.JwtBearer >= 3.1.10",
       "Microsoft.AspNetCore.Cors >= 2.2.0",
       "Microsoft.EntityFrameworkCore >= 5.0.2",
@@ -9459,7 +9598,21 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
-          "projectReferences": {}
+          "targetAlias": "netcoreapp3.1",
+          "projectReferences": {
+            "C:\\Study\\myCSharpProject\\MemberManagementSystem\\MemberManagementSystem.Model.Service\\MemberManagementSystem.Model.Service.csproj": {
+              "projectPath": "C:\\Study\\myCSharpProject\\MemberManagementSystem\\MemberManagementSystem.Model.Service\\MemberManagementSystem.Model.Service.csproj"
+            },
+            "C:\\Study\\myCSharpProject\\MemberManagementSystem\\MemberManagementSystem.Platform\\MemberManagementSystem.Platform.csproj": {
+              "projectPath": "C:\\Study\\myCSharpProject\\MemberManagementSystem\\MemberManagementSystem.Platform\\MemberManagementSystem.Platform.csproj"
+            },
+            "C:\\Study\\myCSharpProject\\MemberManagementSystem\\MemberManagementSystem.Service.DataAccessLayer\\MemberManagementSystem.Service.DataAccessLayer.csproj": {
+              "projectPath": "C:\\Study\\myCSharpProject\\MemberManagementSystem\\MemberManagementSystem.Service.DataAccessLayer\\MemberManagementSystem.Service.DataAccessLayer.csproj"
+            },
+            "C:\\Study\\myCSharpProject\\MemberManagementSystem\\MemberManagementSystem.Service\\MemberManagementSystem.Service.csproj": {
+              "projectPath": "C:\\Study\\myCSharpProject\\MemberManagementSystem\\MemberManagementSystem.Service\\MemberManagementSystem.Service.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
@@ -9470,6 +9623,7 @@
     },
     "frameworks": {
       "netcoreapp3.1": {
+        "targetAlias": "netcoreapp3.1",
         "dependencies": {
           "Dapper": {
             "target": "Package",
@@ -9524,6 +9678,16 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
+        "downloadDependencies": [
+          {
+            "name": "Microsoft.NETCore.App.Ref",
+            "version": "[3.1.0, 3.1.0]"
+          },
+          {
+            "name": "Microsoft.WindowsDesktop.App.Ref",
+            "version": "[3.1.0, 3.1.0]"
+          }
+        ],
         "frameworkReferences": {
           "Microsoft.AspNetCore.App": {
             "privateAssets": "none"
@@ -9532,7 +9696,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.403\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.102\\RuntimeIdentifierGraph.json"
       }
     }
   }
