@@ -135,14 +135,6 @@ namespace MemberManagementSystem
             app.UseHttpsRedirection();
             app.UseStaticFiles();
 
-            app.UseRouting();
-
-            app.UseAuthentication();
-
-            app.UseAuthorization();
-
-            app.UseCors("CorsPolicy");
-
             app.UseSwagger()
                 .UseSwaggerUI(c =>
                 {
@@ -152,6 +144,12 @@ namespace MemberManagementSystem
                 });
 
             app.UseRouting();
+
+            app.UseAuthentication();
+
+            app.UseAuthorization();
+
+            app.UseCors("CorsPolicy");
 
             app.UseEndpoints(endpoints =>
             {
