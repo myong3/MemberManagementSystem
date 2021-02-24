@@ -26,6 +26,10 @@ https://ithelp.ithome.com.tw/articles/10201333
 9. ASP.NET Core 2 系列 - 跨域請求 (Cross-Origin Requests)
 https://ithelp.ithome.com.tw/articles/10196870
 
+10. 安裝Swagger
+https://ithelp.ithome.com.tw/articles/10241544
+
+
 安裝Nuget:
 1. Dapper v2.0.78
 2. Microsoft.EntityFrameworkCore v5.0.2
@@ -36,3 +40,5 @@ https://ithelp.ithome.com.tw/articles/10196870
 7. Microsoft.Extensions.Configuration.Binder v5.0.0
 8. Microsoft.AspNetCore.Cors v2.2.0
 9. Microsoft.AspNetCore.Authentication.JwtBearer v3.1.10
+10. Swashbuckle.AspNetCore.SwaggerGen v6.0.7
+11. Swashbuckle.AspNetCore.SwaggerUI v6.0.7
