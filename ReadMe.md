@@ -29,6 +29,10 @@ https://ithelp.ithome.com.tw/articles/10196870
 10. 安裝Swagger
 https://ithelp.ithome.com.tw/articles/10241544
 
+11. .Net Core Project 從零開始 — NLog
+https://medium.com/@WilliamWhetstone/net-core-project-%E5%BE%9E%E9%9B%B6%E9%96%8B%E5%A7%8B-nlog-b8effb9561f9
+https://medium.com/@WilliamWhetstone/net-core-project-%E5%BE%9E%E9%9B%B6%E9%96%8B%E5%A7%8B-use-nlog-wite-log-to-database-table-711b4c00f00d
+
 
 安裝Nuget:
 1. Dapper v2.0.78
@@ -42,3 +46,5 @@ https://ithelp.ithome.com.tw/articles/10241544
 9. Microsoft.AspNetCore.Authentication.JwtBearer v3.1.10
 10. Swashbuckle.AspNetCore.SwaggerGen v6.0.7
 11. Swashbuckle.AspNetCore.SwaggerUI v6.0.7
+12. NLog v4.7.7
+13. NLog.Web.AspNetCore v4.10.0
