@@ -191,3 +191,8 @@ C:\Study\myCSharpProject\MemberManagementSystem\MemberManagementSystem\bin\Debug
 C:\Study\myCSharpProject\MemberManagementSystem\MemberManagementSystem\bin\Debug\netcoreapp3.1\MemberManagementSystem.Service.DataAccessLayer.dll
 C:\Study\myCSharpProject\MemberManagementSystem\MemberManagementSystem\bin\Debug\netcoreapp3.1\MemberManagementSystem.Service.DataAccessLayer.pdb
 C:\Study\myCSharpProject\MemberManagementSystem\MemberManagementSystem\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.Binder.dll
+C:\Study\myCSharpProject\MemberManagementSystem\MemberManagementSystem\bin\Debug\netcoreapp3.1\Microsoft.OpenApi.dll
+C:\Study\myCSharpProject\MemberManagementSystem\MemberManagementSystem\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.Swagger.dll
+C:\Study\myCSharpProject\MemberManagementSystem\MemberManagementSystem\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Study\myCSharpProject\MemberManagementSystem\MemberManagementSystem\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Study\myCSharpProject\MemberManagementSystem\MemberManagementSystem\obj\Debug\netcoreapp3.1\MemberManagementSystem.MvcApplicationPartsAssemblyInfo.cs

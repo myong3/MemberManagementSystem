@@ -107,6 +107,16 @@ namespace MemberManagementSystem
                           .AllowCredentials();
                 });
             });
+
+            services.AddSwaggerGen(options =>
+            {
+                options.SwaggerDoc("v1", new Microsoft.OpenApi.Models.OpenApiInfo
+                {
+                    Version = "v1",
+                    Title = "Catalog API",
+                    Description = "Catalog apis"
+                });
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -132,6 +142,16 @@ namespace MemberManagementSystem
             app.UseAuthorization();
 
             app.UseCors("CorsPolicy");
+
+            app.UseSwagger()
+                .UseSwaggerUI(c =>
+                {
+                    c.SwaggerEndpoint(
+                        $"/swagger/v1/swagger.json",
+                        "CatalogAPI V1");
+                });
+
+            app.UseRouting();
 
             app.UseEndpoints(endpoints =>
             {
