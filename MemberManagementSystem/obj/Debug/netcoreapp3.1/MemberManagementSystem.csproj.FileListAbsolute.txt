@@ -196,3 +196,7 @@ C:\Study\myCSharpProject\MemberManagementSystem\MemberManagementSystem\bin\Debug
 C:\Study\myCSharpProject\MemberManagementSystem\MemberManagementSystem\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerGen.dll
 C:\Study\myCSharpProject\MemberManagementSystem\MemberManagementSystem\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerUI.dll
 C:\Study\myCSharpProject\MemberManagementSystem\MemberManagementSystem\obj\Debug\netcoreapp3.1\MemberManagementSystem.MvcApplicationPartsAssemblyInfo.cs
+C:\Study\myCSharpProject\MemberManagementSystem\MemberManagementSystem\bin\Debug\netcoreapp3.1\Nlog.config
+C:\Study\myCSharpProject\MemberManagementSystem\MemberManagementSystem\bin\Debug\netcoreapp3.1\NLog.dll
+C:\Study\myCSharpProject\MemberManagementSystem\MemberManagementSystem\bin\Debug\netcoreapp3.1\NLog.Extensions.Logging.dll
+C:\Study\myCSharpProject\MemberManagementSystem\MemberManagementSystem\bin\Debug\netcoreapp3.1\NLog.Web.AspNetCore.dll

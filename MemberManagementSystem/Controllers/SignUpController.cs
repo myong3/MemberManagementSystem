@@ -10,6 +10,7 @@ using MemberManagementSystem.Models.SignUpModels;
 using MemberManagementSystem.Service.SignUp;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
 
 namespace MemberManagementSystem.Controllers
 {
@@ -19,10 +20,12 @@ namespace MemberManagementSystem.Controllers
     {
         private readonly ISignUpService _signUpService;
 
-        public SignUpController(ISignUpService signUpService)
+        private readonly ILogger<SignUpController> _logger;
+        public SignUpController(ISignUpService signUpService, ILogger<SignUpController> logger)
         {
             // DI
             _signUpService = signUpService;
+            _logger = logger;
         }
 
         // GET: api/signup
@@ -47,6 +50,7 @@ namespace MemberManagementSystem.Controllers
         {
             try
             {
+                _logger.LogInformation($"{nameof(CheckAccount)} is start !");
                 if (model.userAccount != null)
                 {
                     var serviceData = new CheckAccountServiceModel()
@@ -79,6 +83,7 @@ namespace MemberManagementSystem.Controllers
             }
             catch (Exception ex)
             {
+                _logger.LogError(ex.Message);
                 return BadRequest(ex.Message);
             }
         }

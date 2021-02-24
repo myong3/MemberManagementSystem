@@ -6,6 +6,7 @@ using MemberManagementSystem.Platform.Utilities.Extensions;
 using MemberManagementSystem.Service.DataAccessLayer.Common;
 using MemberManagementSystem.Service.DataAccessLayer.SignUp;
 using MemberManagementSystem.Services.Interface;
+using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
 using System.Security.Cryptography;
@@ -21,17 +22,21 @@ namespace MemberManagementSystem.Service.SignUp
 
         private readonly IUserAccountProvider _userAccountProvider;
 
-        public SignUpService(ISignUpProvider signUpProvider, IUserAccountProvider userAccountProvider)
+        private readonly ILogger<ISignUpService> _logger;
+
+        public SignUpService(ISignUpProvider signUpProvider, IUserAccountProvider userAccountProvider, ILogger<ISignUpService> logger)
         {
             // DI
             _signUpProvider = signUpProvider;
             _userAccountProvider = userAccountProvider;
+            _logger = logger;
         }
 
         public async Task<ServiceResult<bool>> CheckAccount(CheckAccountServiceModel model)
         {
             try
             {
+                _logger.LogInformation($"{nameof(CheckAccount)} is start !");
                 var result = new ServiceResult<bool>();
                 var queryResult = await _userAccountProvider.QueryAccountDetail(model.userAccount).ConfigureAwait(false);
 
@@ -50,6 +55,7 @@ namespace MemberManagementSystem.Service.SignUp
             }
             catch (Exception ex)
             {
+                _logger.LogError(ex.Message);
                 return new ServiceResult<bool>(false, 900000, ex.ToString(), ex);
             }
         }

@@ -23,6 +23,7 @@ using MemberManagementSystem.Service.LogIn;
 using MemberManagementSystem.Service.DataAccessLayer.Common;
 using MemberManagementSystem.Service.JWToken;
 using MemberManagementSystem.Service.CRUD;
+using NLog;
 
 namespace MemberManagementSystem
 {
@@ -134,6 +135,8 @@ namespace MemberManagementSystem
             }
             app.UseHttpsRedirection();
             app.UseStaticFiles();
+
+            LogManager.Configuration.Variables["connectionString"] = Configuration.GetConnectionString("localdb");
 
             app.UseSwagger()
                 .UseSwaggerUI(c =>
